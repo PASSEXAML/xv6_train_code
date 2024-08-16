@@ -95,3 +95,16 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+uint64
+sys_trace(void){
+  int mask;
+  if(argint(0, &mask) < 0){
+    printf("sys_trace: failed to get argument\n");
+    return -1;
+  }
+  struct proc *p = myproc();
+  p->syscall_trace = mask;
+  printf("sys_trace: syscall_trace set to %d\n", p->syscall_trace);
+  return 0;
+}

@@ -19,12 +19,14 @@ OBJS = \
   $K/string.o \
   $K/main.o \
   $K/vm.o \
+  $K/vmcopyin.o \
   $K/proc.o \
   $K/swtch.o \
   $K/trampoline.o \
   $K/trap.o \
   $K/syscall.o \
   $K/sysproc.o \
+  $K/sprintf.o \
   $K/bio.o \
   $K/fs.o \
   $K/log.o \
@@ -155,6 +157,7 @@ UPROGS=\
 	$U/_find\
 	$U/_xargs\
 	$U/_uptime\
+	$U/_trace\
 
 
 ifeq ($(LAB),syscall)
